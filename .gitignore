@@ -1,4 +1,5 @@
 # Node.jsの依存関係
+node_modules
 node_modules/
 
 # 環境設定ファイル
