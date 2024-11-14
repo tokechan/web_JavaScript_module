@@ -1,3 +1,5 @@
+import { subtotal, display, calcPostageFromPurchase } from "./util.js"
+
 const priceElement = document.getElementById("product");
 const numberElement = document.getElementById("number");
 const addButton = document.getElementById("add");
@@ -45,33 +47,11 @@ function add() {
   } else {
     purchases[newPurchase].number += purchase.number
   }
-
   window.alert(`${display(purchases)}\n小計${subtotal(purchases)}円`);
   priceElement.value = "";
   numberElement.value = "";
 }
 
-function subtotal() {
-  return purchases.reduce((prev, purchase) => {
-    return prev + purchase.product.price * purchase.number;
-  }, 0)
-}
-
-function display() {
-  return purchases.map(purchase => {
-    return `${purchase.product.price}円:${purchase.number}点`;
-  }).join("\n")
-};
-
-function calcPostageFromPurchase(sum) {
-   if (sum == 0 || sum >= 3000) {
-     return 0;
-   } else if (sum < 1000){
-    return 500;
-   } else {
-    return 250;
-   }
-}
 
 function calc() {
   const sum = subtotal(purchases);
