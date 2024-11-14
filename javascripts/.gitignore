@@ -1,0 +1,17 @@
+# Node.jsの依存関係
+node_modules/
+
+# 環境設定ファイル
+.env
+
+# ログファイル
+logs
+*.log
+npm-debug.log*
+
+# キャッシュディレクトリ
+.npm
+.cache
+
+# macOS固有のファイル
+.DS_Store
